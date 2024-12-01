@@ -1,0 +1,92 @@
+{% extends "loggedout_layout.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block logout_content %} 
+
+<style>
+    body.bg-full-screen-image {
+        background: url("{{ url_for('static', filename='image/background1.png') }}") no-repeat center center;
+        background-size: cover;
+    }
+</style>
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <section class="row flexbox-container">
+                    <div class="col-xl-8 col-11 d-flex justify-content-center">
+                        <div class="card bg-authentication rounded-0 mb-0 login-card">
+                            <div class="row m-0">
+                                
+                                <div class="col-lg-5 d-lg-block d-none text-center align-self-center px-1 py-0 login-img">
+                                    <img src="{{url_for('static', filename='image/stjoseph.png')}}" alt="branding logo" class="branding-logo">
+                                </div>  
+                                
+                                <div class="col-lg-7 col-12 p-3">
+                                    <div class="card rounded-0 mb-0 px-2">
+                                        <div class="card-header pb-1">
+                                            <div class="card-title">
+                                                <h4 class="mb-0">Register</h4>
+                                            </div>
+                                        </div>
+                                        <p>Please input credentials for registration</p>
+                                        <div class="card-content">
+                                            <div class="card-body p-0">
+                                                <form action="/register" method="post">
+                                                    <fieldset class="form-label-group form-group position-relative has-icon-left">
+                                                        <input type="text" class="form-control"  name="username" id="username" maxlength="100" placeholder="Username" required>
+                                                        <div class="form-control-position">
+                                                            <i class="feather icon-user"></i>
+                                                        </div>
+                                                        <label for="user-name">Username</label>
+                                                    </fieldset>
+
+                                                    <fieldset class="form-label-group form-group position-relative has-icon-left">
+                                                        <input type="text" class="form-control"  name="firstname" id="firstname" maxlength="100" placeholder="First Name" required>
+                                                        <div class="form-control-position">
+                                                            <i class="feather icon-user"></i>
+                                                        </div>
+                                                        <label for="user-name">First Name</label>
+                                                    </fieldset>
+
+                                                    <fieldset class="form-label-group form-group position-relative has-icon-left">
+                                                        <input type="text" class="form-control"  name="middlename" id="middlename" maxlength="100" placeholder="Middle Name">
+                                                        <div class="form-control-position">
+                                                            <i class="feather icon-user"></i>
+                                                        </div>
+                                                        <label for="user-name">Middle Name</label>
+                                                    </fieldset>
+
+                                                    <fieldset class="form-label-group form-group position-relative has-icon-left">
+                                                        <input type="text" class="form-control"  name="lastname" id="lastname" maxlength="100" placeholder="Last Name" required>
+                                                        <div class="form-control-position">
+                                                            <i class="feather icon-user"></i>
+                                                        </div>
+                                                        <label for="user-name">Last Name</label>
+                                                    </fieldset>
+
+                                                    <button type="submit" class="btn btn-primary w-50 mx-auto d-block mb-1">Regsiter</button>
+                                                    <a class="btn btn-primary w-50 mx-auto d-block mb-1" href="/">Login</a>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+{% endblock %}

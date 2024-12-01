@@ -1,0 +1,168 @@
+/* Customize default button colors */
+.btn {
+    background-color: #375534;
+    color: #ffffff; 
+    border: none; 
+}
+
+.btn:hover {
+    background-color: #0f2a1d; 
+    color: #ffffff;
+}
+
+.btn:focus, .btn:active {
+    background-color: #6b9071 !important; 
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.5); 
+}
+
+.card {
+    border: 0px;
+    box-shadow: none !important;
+}
+
+.card-header{
+    padding: .75rem 0rem;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.branding-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.login-card {
+    width: 50rem;
+}
+
+.login-img {
+    background-color: #e3eed4;
+    height: 100%;
+    display: flex;
+    align-content: center;
+}
+
+
+/*------------------------------------------------------------
+
+
+.bg-full-screen-image {
+    background: url('/static/image/background1.png') no-repeat center center;
+    background-size: cover;
+}*/
+
+html body {
+    height: 100%;
+    background-color: #F8F8F8;
+}
+
+html .pace .pace-progress {
+    background: #7367F0;
+}
+
+html body.blank-page .content.app-content {
+    overflow: overlay;
+    overflow-x: hidden;
+}
+html body[data-col='1-column'] .content, html body[data-col='1-column'] .footer {
+    margin-right: 0 !important;
+}
+html body.blank-page .content {
+    margin-right: 0;
+}
+html body .content.app-content {
+    overflow: hidden;
+}
+html body .content {
+    padding: 0;
+    position: relative;
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    min-height: calc(100% - 4rem);
+    margin-right: 260px;
+}
+
+html body .content.app-content .content-overlay {
+    position: fixed;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+    z-index: -1;
+}
+html body.blank-page .content.app-content .header-navbar-shadow {
+    display: none;
+}
+
+html body.blank-page .content-wrapper {
+    padding: 0 !important;
+    margin-top: 0;
+}
+html body .content .content-wrapper {
+    padding: calc(2.2rem - 0.4rem) 2.2rem 0;
+}
+
+html body.blank-page .content-wrapper .flexbox-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100vh;
+    height: calc(var(--vh, 1vh)* 100);
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: flex-start;
+}
+
+.divider {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 1rem 0;
+}
+
+.divider .divider-text {
+    position: relative;
+    display: inline-block;
+    font-size: 0.9375rem;
+    padding: 0 1rem;
+    background-color: #FFFFFF;
+}
+
+.divider .divider-text:before {
+    left: 100%;
+}
+.divider .divider-text:before, .divider .divider-text:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.divider .divider-text:after {
+    right: 100%;
+}
+.divider .divider-text:before, .divider .divider-text:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
