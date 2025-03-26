@@ -1,0 +1,63 @@
+{% extends "layout/loggedout_layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block logout_content %} 
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-body">
+                
+                <div class="card bg-authentication mb-0 login-card">
+                    <div class="col-lg-5 d-lg-block d-none text-center align-self-center px-1 py-0 login-img">
+                        <img src="{{url_for('static', filename='image/stjoseph.png')}}" alt="branding logo" class="branding-logo">
+                    </div>  
+                    
+                    <div class="col-lg-7 col-12 p-3">
+                        <div class="card mb-0 px-2">
+                            <div class="card-header pb-1">
+                                <div class="card-title">
+                                    <h4 class="mb-0">Login</h4>
+                                </div>
+                            </div>
+                            <p>Welcome back, please login to your account.</p>
+
+                            <div class="mb-3">Please enter your login details.</div>
+
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {% for message in messages %}
+                                            <div>{{ message }}</div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            {% endwith %}
+                            <div class="card-content">
+                                <div class="card-body p-0">
+                                    <form action="/login" method="POST">
+                                        <fieldset class="form-label-group form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control"  name="username" id="username" maxlength="100" placeholder="Username" required>
+                                            <div class="form-control-position">
+                                                <i class="feather icon-user"></i>
+                                            </div>
+                                            <label for="user-name">Username</label>
+                                        </fieldset>
+
+                                        <div class="button-container">
+                                            <a class="btn btn-primary w-50 mx-auto d-block mb-1" href="/register">Register</a>    
+                                            <button type="submit" class="btn btn-primary w-50 mx-auto d-block mb-1">Login</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+{% endblock %}

@@ -1,0 +1,241 @@
+{% extends "in/confirmation.html" %}
+
+{% block title %}Update  Confirmation{% endblock %}
+
+{% block signedin_content %}
+<div class="page_header row mr-2">
+    <div class="content-header-left col-md-9 col-12 mb-2">
+        <div class="row breadcrumbs-top">
+            <div class="col-12">
+                <h2 class="content-header-title float-left mb-0">Confirmation</h2>
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a href="/confirmation">Confirmation</a>
+                        </li>
+                        <li class="breadcrumb-item active">Update
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card p-4 mb-5">
+    {%with messages = get_flashed_messages()%}
+    {%if messages%}
+    {%for message in messages%}
+
+    <div class="alert alert-success alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    
+    <div class="card-header pb-1">
+        <div class="card-title">
+            <h4 class="mb-0">Update Confirmation</h4>
+        </div>
+    </div>
+
+    <div class="card-body pt-0 pb-0">
+        <form id="updateConfForm">
+    
+            <!-- Client Information -->
+            <div class="form-section">
+                <div class="divider divider-dark divider-left">
+                    <div class="divider-text"><h5>Client Information</h5></div>
+                </div>
+                
+                
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>First Name:</label>
+                        <input type="hidden" name="id" id="editid">
+                        <input type="hidden" name="client_id" id="editclient_id">
+                        <input type="text" class="form-control" name="fname" required="1" id="editfname">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Middle Name:</label>
+                        <input type="text" class="form-control" name="mname" required="1" id="editmname">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Last Name:</label>
+                        <input type="text" class="form-control" name="lname" required="1" id="editlname">
+                    </div>
+                    
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>Birth Date:</label>
+                        <input type="date" class="form-control" name="birthday" required="1" id="editbirthday">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Birth Place:</label>
+                        <input type="text" class="form-control" name="birthplace" required="1" id="editbirthplace">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Ligitivity:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ligitivity" id="ligitivityCivil" value="civil" required>
+                            <label class="form-check-label" for="ligitivityCivil">Civil</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ligitivity" id="ligitivityCatholic" value="catholic" required>
+                            <label class="form-check-label" for="ligitivityCatholic">Catholic</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Address:</label>
+                    <input type="text" class="form-control" name="address" required="1" id="editaddress">
+                </div>
+
+                <div class="form-group">
+                    <label>Churh Baptized:</label>
+                    <input type="text" class="form-control" name="church_bapt" required="1" id="editchurchbapt">
+                </div>
+
+                <!-- Parents Information -->
+                <h6>Mother's Information</h6>
+
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>First Name:</label>
+                        <input type="text" class="form-control" name="mother-fname" required="1" id="editmother_fname">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Middle Name:</label>
+                        <input type="text" class="form-control" name="mother-mname" required="1" id="editmother_mname">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Last Name:</label>
+                        <input type="text" class="form-control" name="mother-lname" required="1" id="editmother_lname"> 
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label>Birthday:</label>
+                        <input type="date" class="form-control" name="mother-birthday" required="1" id="editmother_birthday">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Birth Place:</label>
+                        <input type="text" class="form-control" name="mother-bplace" required="1" id="editmother_bplace">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Address:</label>
+                    <input type="text" class="form-control" name="mother-address" required="1" id="editmother_address">
+                </div>
+
+                <!-- Father Information -->
+                <h6>Father's Information</h6>
+
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>First Name:</label>
+                        <input type="text" class="form-control" name="father-fname" required="1" id="editfather_fname">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Middle Name:</label>
+                        <input type="text" class="form-control" name="father-mname" required="1" id="editfather_mname">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Last Name:</label>
+                        <input type="text" class="form-control" name="father-lname" required="1" id="editfather_lname">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label>Birthday:</label>
+                        <input type="date" class="form-control" name="father-birthday" required="1" id="editfather_birthday">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Birth Place:</label>
+                        <input type="text" class="form-control" name="father-bplace" required="1" id="editfather_bplace">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Address:</label>
+                    <input type="text" class="form-control" name="father-address" required="1" id="editfather_address">
+                </div>
+
+            </div>
+
+            <!-- Baptism Information -->
+            <div class="form-section">
+                <div class="divider divider-dark divider-left">
+                    <div class="divider-text"><h5>Confirmation Information</h5></div>
+                </div>
+                
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label>Date of Confirmation:</label>
+                        <input type="date" class="form-control" name="conf-date" required="1" id="editconfirmation_date">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Priest:</label>
+                        <select class="form-control" name="priest" id="editpriest" required>
+                            <option value="" disabled selected>Select a Priest</option>
+                            {% for priest in priests %}
+                            <option value="{{ priest.id }}" >{{ priest.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label>Sponsor 1 Name:</label>
+                        <input type="text" class="form-control" name="sponsor1" required="1" id="editsponsorA">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label>Sponsor 2 Name:</label>
+                        <input type="text" class="form-control" name="sponsor2" required="1" id="editsponsorB">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group pt-3">
+                <a href="{{ url_for('frontend.confirmation') }}" class="btn btn-secondary btn-cancel">Cancel</a>
+                <button class="edit-btn-conf btn btn-primary" id="editButtonConf" data-page="editConf">Update</button>
+                <!-- <button class="btn btn-primary" type="submit">Update Data</button> -->
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/custom/confirmation.js') }}"></script>
+
+{% endblock %}

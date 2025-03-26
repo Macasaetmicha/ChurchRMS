@@ -1,0 +1,148 @@
+2024-12-26 22:27:51,937 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:27:51,937 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:27:51,939 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:27:52,449 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:27:52,452 INFO werkzeug MainThread :  * Debugger PIN: 356-690-743
+2024-12-26 22:29:41,284 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:29:41,285 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:29:41,288 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:29:41,850 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:29:41,858 INFO werkzeug MainThread :  * Debugger PIN: 356-690-743
+2024-12-26 22:32:15,430 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:32:15,430 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:32:15,433 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:32:17,477 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:32:17,486 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 22:33:00,058 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:33:00,059 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:33:00,061 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:33:01,864 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:33:01,869 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 22:35:44,094 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:35:44,094 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:35:44,095 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:35:44,683 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:35:44,685 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 22:36:24,259 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:36:24,259 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:36:24,261 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:36:24,701 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:36:24,704 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 22:37:10,409 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:37:10,410 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:37:10,411 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:37:10,854 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:37:10,859 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 22:38:02,244 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:38:02,244 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:38:02,246 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:38:02,720 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:38:02,722 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 22:40:36,656 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:40:36,656 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:40:36,658 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:40:37,112 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:40:37,116 INFO werkzeug MainThread :  * Debugger PIN: 356-690-743
+2024-12-26 22:44:52,620 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:44:52,621 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:44:52,625 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:48:28,756 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:48:28,756 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:48:28,759 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:54:20,512 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:54:20,513 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:54:20,515 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:56:44,632 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 22:56:44,632 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 22:56:44,634 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 22:56:45,092 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 22:56:45,094 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 23:06:07,782 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 23:06:07,783 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 23:06:07,788 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 23:06:08,655 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 23:06:08,660 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 23:08:23,463 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 23:08:23,463 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 23:08:23,465 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 23:08:23,892 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 23:08:23,894 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 23:09:11,741 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.1.12:5000
+2024-12-26 23:09:11,741 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-12-26 23:09:11,744 INFO werkzeug MainThread :  * Restarting with stat
+2024-12-26 23:25:07,472 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 23:25:07,478 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 23:25:23,667 INFO werkzeug Thread-2 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:23] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:26,264 INFO werkzeug Thread-3 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:26] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:27,657 INFO werkzeug Thread-4 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:27] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:27,964 INFO werkzeug Thread-5 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:27] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:28,131 INFO werkzeug Thread-6 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:28] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:28,507 INFO werkzeug Thread-7 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:28] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:28,664 INFO werkzeug Thread-8 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:28] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:28,813 INFO werkzeug Thread-9 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:28] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:28,982 INFO werkzeug Thread-10 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:28] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:29,155 INFO werkzeug Thread-11 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:29] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:29,296 INFO werkzeug Thread-12 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:29] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:29,451 INFO werkzeug Thread-13 (process_request_thread) : 192.168.1.12 - - [26/Dec/2024 23:25:29] "[32mGET / HTTP/1.1[0m" 302 -
+2024-12-26 23:25:36,614 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:25:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-12-26 23:25:36,912 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:25:36] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-12-26 23:25:37,307 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:25:37] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-12-26 23:25:37,325 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:25:37] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=xfAjky33bAg8Wjmr0UWf HTTP/1.1" 200 -
+2024-12-26 23:25:38,025 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:25:38] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-12-26 23:26:07,231 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\Mica\\Documents\\ChurchRMS-v0\\app\\frontend.py', reloading
+2024-12-26 23:26:07,910 WARNING werkzeug MainThread :  * Debugger is active!
+2024-12-26 23:26:07,913 INFO werkzeug MainThread :  * Debugger PIN: 429-319-539
+2024-12-26 23:26:24,892 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:26:24] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-12-26 23:26:25,178 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:26:25] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-12-26 23:26:25,537 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:26:25] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-12-26 23:26:25,583 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:26:25] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=wiS9mFY5EXT5Uin2GwKf HTTP/1.1" 200 -
+2024-12-26 23:26:26,223 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [26/Dec/2024 23:26:26] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-12-26 23:27:24,527 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\Mica\\Documents\\ChurchRMS-v0\\app\\frontend.py', reloading

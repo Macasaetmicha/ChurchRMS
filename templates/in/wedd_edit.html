@@ -1,0 +1,396 @@
+{% extends "in/wedding.html" %}
+
+{% block title %}Update Wedding{% endblock %}
+
+{% block signedin_content %}
+<div class="page_header row mr-2">
+    <div class="content-header-left col-md-9 col-12 mb-2">
+        <div class="row breadcrumbs-top">
+            <div class="col-12">
+                <h2 class="content-header-title float-left mb-0">Wedding</h2>
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active"><a href="/wedding">Wedding</a>
+                        </li>
+                        <li class="breadcrumb-item active">Update
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card p-4 mb-5">
+    {%with messages = get_flashed_messages()%}
+    {%if messages%}
+    {%for message in messages%}
+
+    <div class="alert alert-success alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    
+    <div class="card-header pb-1">
+        <div class="card-title">
+            <h4 class="mb-0">Update Wedding</h4>
+        </div>
+    </div>
+
+    <div class="card-body pt-0 pb-0">
+        <form id="updateWeddForm">
+                                
+            <!-- Client Information -->
+            <div class="form-section">
+                <div class="divider divider-dark divider-left">
+                    <div class="divider-text"><h5>Client Information</h5></div>
+                </div>
+                <div class="nav-fill">
+                    <ul class="nav nav-pills nav-fill" role="tablist" style="height: 98px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="tab-fill-tab1" data-toggle="tab" aria-controls="tabGroom" href="#tabGroom" role="tab" aria-selected="true">Groom Information</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab-fill-tab2" data-toggle="tab" aria-controls="tabBride" href="#tabBride" role="tab" aria-selected="false">Bride Information</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabGroom" role="tabpanel" aria-labelledby="tab-fill-tab1">
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label>First Name:</label>
+                                    <input type="hidden" name="id" id="editid">
+                                    <input type="hidden" name="Groomclient_id" id="editGroomclient_id">
+                                    <input type="text" class="form-control" name="groom-fname" required="1" id="editGroomFname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Middle Name:</label>
+                                    <input type="text" class="form-control" name="groom-mname" required="1" id="editGroomMname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Last Name:</label>
+                                    <input type="text" class="form-control" name="groom-lname" required="1" id="editGroomLname">
+                                </div>
+                                
+                            </div>
+            
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label>Birth Date:</label>
+                                    <input type="date" class="form-control" name="groom-bday" required="1" id="editGroomBday">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Birth Place:</label>
+                                    <input type="text" class="form-control" name="groom-bplace" required="1" id="editGroomBplace">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Ligitivity:</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="groom-ligitivity" id="GroomligitivityCivil" value="civil" required>
+                                        <label class="form-check-label" for="ligitivityCivil">Civil</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="groom-ligitivity" id="GroomligitivityCatholic" value="catholic" required>
+                                        <label class="form-check-label" for="ligitivityCatholic">Catholic</label>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="form-group">
+                                <label>Address:</label>
+                                <input type="text" class="form-control" name="groom-address" required="1" id="editGroomAddress">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Status:</label>
+                                <input type="text" class="form-control" name="groom-status" required="1" id="editGroomStatus">
+                            </div>
+            
+                            <!-- Parents Information -->
+                            <h6>Mother's Information</h6>
+            
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label>First Name:</label>
+                                    <input type="text" class="form-control" name="groom-mother-fname" required="1" id="editGroomMoFname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Middle Name:</label>
+                                    <input type="text" class="form-control" name="groom-mother-mname" required="1" id="editGroomMoMname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Last Name:</label>
+                                    <input type="text" class="form-control" name="groom-mother-lname" required="1" id="editGroomMoLname">
+                                </div>
+                            </div>
+            
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label>Birthday:</label>
+                                    <input type="date" class="form-control" name="groom-mother-bday" required="1" id="editGroomMoBday">
+                                </div>
+            
+                                <div class="col-md-6">
+                                    <label>Birth Place:</label>
+                                    <input type="text" class="form-control" name="groom-mother-bplace" required="1" id="editGroomMoBplace">
+                                </div>
+                            </div>
+            
+                            <div class="form-group">
+                                <label>Address:</label>
+                                <input type="text" class="form-control" name="groom-mother-address" required="1" id="editGroomMoAddress">
+                            </div>
+            
+                            <!-- Father Information -->
+                            <h6>Father's Information</h6>
+            
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label>First Name:</label>
+                                    <input type="text" class="form-control" name="groom-father-fname" required="1" id="editGroomFaFname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Middle Name:</label>
+                                    <input type="text" class="form-control" name="groom-father-mname" required="1" id="editGroomFaMname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Last Name:</label>
+                                    <input type="text" class="form-control" name="groom-father-lname" required="1" id="editGroomFaLname">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label>Birthday:</label>
+                                    <input type="date" class="form-control" name="groom-father-bday" required="1" id="editGroomFaBday">
+                                </div>
+            
+                                <div class="col-md-6">
+                                    <label>Birth Place:</label>
+                                    <input type="text" class="form-control" name="groom-father-bplace" required="1" id="editGroomFaBplace">
+                                </div>
+                            </div>
+            
+                            <div class="form-group">
+                                <label>Address:</label>
+                                <input type="text" class="form-control" name="groom-father-address" required="1" id="editGroomFaAddress">
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tabBride" role="tabpanel" aria-labelledby="tab-fill-tab2">
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label>First Name:</label>
+                                    <input type="hidden" name="Brideclient_id" id="editBrideclient_id">
+                                    <input type="text" class="form-control" name="bride-fname" required="1" id="editBrideFname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Middle Name:</label>
+                                    <input type="text" class="form-control" name="bride-mname" required="1" id="editBrideMname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Last Name:</label>
+                                    <input type="text" class="form-control" name="bride-lname" required="1" id="editBrideLname">
+                                </div>
+                                
+                            </div>
+            
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label>Birth Date:</label>
+                                    <input type="date" class="form-control" name="bride-bday" required="1" id="editBrideBday">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Birth Place:</label>
+                                    <input type="text" class="form-control" name="bride-bplace" required="1" id="editBrideBplace">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Ligitivity:</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bride-ligitivity" id="BrideligitivityCivil" value="civil" required>
+                                        <label class="form-check-label" for="ligitivityCivil">Civil</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bride-ligitivity" id="BrideligitivityCatholic" value="catholic" required>
+                                        <label class="form-check-label" for="ligitivityCatholic">Catholic</label>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="form-group">
+                                <label>Address:</label>
+                                <input type="text" class="form-control" name="bride-address" required="1" id="editBrideAddress">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Status:</label>
+                                <input type="text" class="form-control" name="bride-status" required="1" id="editBrideStatus">
+                            </div>
+            
+                            <!-- Parents Information -->
+                            <h6>Mother's Information</h6>
+            
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label>First Name:</label>
+                                    <input type="text" class="form-control" name="bride-mother-fname" required="1" id="editBrideMoFname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Middle Name:</label>
+                                    <input type="text" class="form-control" name="bride-mother-mname" required="1" id="editBrideMoMname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Last Name:</label>
+                                    <input type="text" class="form-control" name="bride-mother-lname" required="1" id="editBrideMoLname">
+                                </div>
+                            </div>
+            
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label>Birthday:</label>
+                                    <input type="date" class="form-control" name="bride-mother-bday" required="1" id="editBrideMoBday">
+                                </div>
+            
+                                <div class="col-md-6">
+                                    <label>Birth Place:</label>
+                                    <input type="text" class="form-control" name="bride-mother-bplace" required="1" id="editBrideMoBplace">
+                                </div>
+                            </div>
+            
+                            <div class="form-group">
+                                <label>Address:</label>
+                                <input type="text" class="form-control" name="bride-mother-address" required="1" id="editBrideMoAddress">
+                            </div>
+            
+                            <!-- Father Information -->
+                            <h6>Father's Information</h6>
+            
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <label>First Name:</label>
+                                    <input type="text" class="form-control" name="bride-father-fname" required="1" id="editBrideFaFname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Middle Name:</label>
+                                    <input type="text" class="form-control" name="bride-father-mname" required="1" id="editBrideFaMname">
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <label>Last Name:</label>
+                                    <input type="text" class="form-control" name="bride-father-lname" required="1" id="editBrideFaLname">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label>Birthday:</label>
+                                    <input type="date" class="form-control" name="bride-father-bday" required="1" id="editBrideFaBday">
+                                </div>
+            
+                                <div class="col-md-6">
+                                    <label>Birth Place:</label>
+                                    <input type="text" class="form-control" name="bride-father-bplace" required="1" id="editBrideFaBplace">
+                                </div>
+                            </div>
+            
+                            <div class="form-group">
+                                <label>Address:</label>
+                                <input type="text" class="form-control" name="bride-father-address" required="1" id="editBrideFaAddress">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Baptism Information -->
+            <div class="form-section">
+                <div class="divider divider-dark divider-left">
+                    <div class="divider-text"><h5>Wedding Information</h5></div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label>Date of Wedding:</label>
+                        <input type="date" class="form-control" name="wedding-date" required="1" id="editWeddingDate">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Priest:</label>
+                        <select class="form-control" name="priest" required id="editpriest">
+                            <option value="" disabled selected>Select a Priest</option>
+                            {% for priest in priests %}
+                                <option value="{{ priest.id }}">{{ priest.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label>Sponsor 1 Name:</label>
+                        <input type="text" class="form-control" name="sponsor1" required="1" id="editsponsorA">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Sponsor 2 Name:</label>
+                        <input type="text" class="form-control" name="sponsor2" required="1" id="editsponsorB">    
+                    </div>    
+                </div>
+
+                <h6>Legal Information</h6>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label>License Number:</label>
+                        <input type="text" class="form-control" name="licenseNumber" required="1" id="editLicenseNum">    
+                    </div>
+
+                    <div class="col-md-3">
+                        <label>Date:</label>
+                        <input type="date" class="form-control" name="civilDate" required="1" id="editCivilDate">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label>Place:</label>
+                        <input type="text" class="form-control" name="civilPlace" required="1" id="editCivilPlace">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group pt-3">
+                <a href="{{ url_for('frontend.wedding') }}" class="btn btn-secondary btn-cancel">Cancel</a>
+                <button class="edit-btn-wedd btn btn-primary" id="editButtonWedd" data-page="editWedd">Update</button>
+
+                <!-- <button class="btn btn-primary" type="submit">Insert Data</button> -->
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/custom/wedding.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,212 @@
+{% extends "layout/signedin_layout.html" %}
+
+{% block title %}Priest{% endblock %}
+
+{% block signedin_content %}
+
+<div class="page_header row mr-2">
+    <div class="content-header-left col-md-9 col-12 mb-2">
+        <div class="row breadcrumbs-top">
+            <div class="col-12">
+                <h2 class="content-header-title float-left mb-0">Priest</h2>
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Priest
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+        <div class="form-group breadcrum-right">
+            <a class="btn btn-primary add-priest-btn" data-toggle="modal" data-target="#priestAddModal">
+                <img class="add_btn_img" src="{{ url_for('static', filename='image/plus-solid.svg') }}" alt="Add">
+                Add
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="card p-4 mb-5">
+    <div class="col-lg-6 col-md-12 mb-1">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" data-table="priestTable" class="btn btn-primary btn-copy">Copy</button>
+            <button type="button" data-table="priestTable" data-table-name="PriestRecords" class="btn btn-danger btn-pdf">PDF</button>
+            <button type="button" data-table="priestTable" data-table-name="PriestRecords" class="btn btn-info btn-xcs">XCS</button>
+        </div>
+    </div>
+    {%with messages = get_flashed_messages()%}
+    {%if messages%}
+    {%for message in messages%}
+
+    <div class="alert alert-success alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col md-12">
+                <div class="table-responsive">
+                    <table id="priestTable" class="display table zero-configuration dataTable table-striped table-bordered rounded mt-2 w-100">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Church</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                           
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container">
+
+            <div id="priestShowModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Priest Information</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Priest Name:</strong> <span id="priestName"></span></p>
+                            <p><strong>Church:</strong> <span id="priestChurch"></span></p>
+                            <p><strong>Position:</strong> <span id="priestPosition"></span></p>
+                            <p><strong>Status:</strong> <span id="priestStatus"></span></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="priestAddModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addPriestModal" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="addPriestModal">Add Priest Information</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                        </div>
+                        <form id="insertPriestForm">
+                            <div class="modal-body">
+
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label>Name:</label>
+                                        <input type="text" class="form-control" name="name" required="1">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <label>Church:</label>
+                                        <input type="text" class="form-control" name="church" required="1">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label>Position:</label>
+                                        <select class="form-control" name="position" required>
+                                            <option value="" disabled selected>Select a Priest</option>
+                                            <option value="head">Head</option>
+                                            <option value="guest">Guest</option>
+                                            <option value="bishop">Bishop</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button class="insert-btn-priest btn btn-primary" data-page="insertPriest">Insert Data</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="priestEditModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editPriestModal" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="editPriestModal">Edit Priest Information</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                        </div>
+                        <form id="updatePriestForm">
+                            <div class="modal-body">
+
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input type="hidden" name="id" id="editid">
+                                        <label>Name:</label>
+                                        <input type="text" class="form-control" name="name" required="1" id="editPriestName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label>Church:</label>
+                                        <input type="text" class="form-control" name="church" required="1" id="editPriestChurch">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <label>Position:</label>
+                                        <select class="form-control" name="position" required id="editPriestPosition">
+                                            <option value="" disabled selected>Select a Priest</option>
+                                            <option value="head">Head</option>
+                                            <option value="guest">Guest</option>
+                                            <option value="bishop">Bishop</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label>Status:</label>
+                                        <select class="form-control" name="status" required id="editPriestStatus">
+                                            <option value="" disabled selected>Select a Priest</option>
+                                            <option value="living">Living</option>
+                                            <option value="deceased">Dead</option>
+                                            <option value="retired">Retired</option>
+                                        </select>
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button class="edit-btn-priest btn btn-primary" id="editButtonBapt" data-page="editPriest">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/table.js') }}"></script>
+<script src="{{ url_for('static', filename='js/custom/priest.js') }}"></script>
+
+{% endblock %}

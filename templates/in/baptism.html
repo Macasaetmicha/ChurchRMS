@@ -1,0 +1,182 @@
+{% extends "layout/signedin_layout.html" %}
+
+{% block title %}Baptism{% endblock %}
+
+{% block signedin_content %}
+
+<div class="page_header row mr-2">
+    <div class="content-header-left col-md-9 col-12 mb-2">
+        <div class="row breadcrumbs-top">
+            <div class="col-12">
+                <h2 class="content-header-title float-left mb-0">Baptism</h2>
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Baptism
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+        <div class="form-group breadcrum-right">
+            <a href="{{ url_for('frontend.new_bapt') }}" class="btn btn-primary">
+                <img class="add_btn_img" src="{{ url_for('static', filename='image/plus-solid.svg') }}" alt="Add">
+                Add
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="card p-4 mb-5">
+    <div class="col-lg-6 col-md-12 mb-1">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" data-table="baptismTable" class="btn btn-primary btn-copy">Copy</button>
+            <button type="button" data-table="baptismTable" data-table-name="BaptismRecords" class="btn btn-danger btn-pdf">PDF</button>
+            <button type="button" data-table="baptismTable" data-table-name="BaptismRecords" class="btn btn-info btn-xcs">XCS</button>
+        </div>
+    </div>
+    {%with messages = get_flashed_messages()%}
+    {%if messages%}
+    {%for message in messages%}
+
+    <div class="alert alert-success alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col md-12">
+                <div class="table-responsive">
+                    <table id="baptismTable" class="display table zero-configuration dataTable table-striped table-bordered rounded mt-2 w-100">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Action</th>
+                                <th rowspan="2">Baptism Date</th>
+                                <th colspan="3">Name</th>
+                                <th rowspan="2">Birthdate</th>
+                                <th rowspan="2">Address</th>
+                                <th colspan="2">Parents</th>
+                                <th rowspan="2">Priest</th>
+                            </tr>
+                            <tr>
+                                <th>First</th>
+                                <th>Middle</th>
+                                <th>Last</th>
+                                <th>Father</th>
+                                <th>Mother</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                           
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container">
+
+            <div id="baptShowModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Baptism Information</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="nav-vertical">
+                                <ul class="nav nav-tabs nav-left flex-column" role="tablist" style="height: 98px;">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="baseVerticalLeft-tab1" data-toggle="tab" aria-controls="tabClient" href="#tabClient" role="tab" aria-selected="true">Client Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="baseVerticalLeft-tab2" data-toggle="tab" aria-controls="tabParents" href="#tabParents" role="tab" aria-selected="false">Parents Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="baseVerticalLeft-tab3" data-toggle="tab" aria-controls="tabBaptism" href="#tabBaptism" role="tab" aria-selected="false">Baptism Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="baseVerticalLeft-tab4" data-toggle="tab" aria-controls="tabRecords" href="#tabRecords" role="tab" aria-selected="false">Records</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tabClient" role="tabpanel" aria-labelledby="baseVerticalLeft-tab1">
+                                        <p><strong>Client Name:</strong> <span id="baptClientName"></span></p>
+                                        <p><strong>Birthday:</strong> <span id="baptClientBday"></span></p>
+                                        <p><strong>Birthplace:</strong> <span id="baptClientBplace"></span></p>
+                                        <p><strong>Ligitivity:</strong> <span id="baptClientLigitivity"></span></p>
+                                        <p><strong>Address:</strong> <span id="baptClientAddress"></span></p>
+                                        <p><strong>Status:</strong> <span id="baptClientStatus"></span></p>
+                                    </div>
+                                    <div class="tab-pane" id="tabParents" role="tabpanel" aria-labelledby="baseVerticalLeft-tab2">
+                                        <div class="divider divider-dark divider-left">
+                                            <div class="divider-text"><h5>Mothers Information</h5></div>
+                                        </div>
+                                        <p><strong>Mother:</strong> <span id="baptMoName"></span></p>
+                                        <p><strong>Birthday:</strong> <span id="baptMoBday"></span></p>
+                                        <p><strong>Birthplace:</strong> <span id="baptMoBplace"></span></p>
+                                        <p></p><strong>Address:</strong> <span id="baptMoAddress"></span></p>
+        
+                                        <div class="divider divider-dark divider-left">
+                                            <div class="divider-text"><h5>Fathers Information</h5></div>
+                                        </div>
+                                        <p><strong>Father:</strong> <span id="baptFaName"></span></p>
+                                        <p><strong>Birthday:</strong> <span id="baptFaBday"></span></p>
+                                        <p><strong>Birthplace:</strong> <span id="baptFaBplace"></span></p>
+                                        <p><strong>Address:</strong> <span id="baptFaAddress"></span></p>
+            
+                                    </div>
+                                    <div class="tab-pane" id="tabBaptism" role="tabpanel" aria-labelledby="baseVerticalLeft-tab3">
+                                        <p><strong>Baptism Date:</strong> <span id="baptDate"></span></p>
+                                        <p><strong>Priest:</strong> <span id="baptPriest"></span></p>
+
+                                        <div class="divider divider-dark divider-left">
+                                            <div class="divider-text"><h5>Sponsors</h5></div>
+                                        </div>
+                                        <p><strong>Sponsor A:</strong> <span id="baptSponsA"></span></p>
+                                        <p><strong>Residence A:</strong> <span id="baptResiA"></span></p>
+                                        <p><strong>Sponsor B:</strong> <span id="baptSponsB"></span></p>
+                                        <p><strong>Residence B:</strong> <span id="baptResiB"></span></p>
+                                    </div>
+
+                                    <div class="tab-pane" id="tabRecords" role="tabpanel" aria-labelledby="baseVerticalLeft-tab4">
+                                        <p><strong>Index:</strong> <span id="baptIndex"></span></p>
+                                        <p><strong>Book:</strong> <span id="baptBook"></span></p>
+                                        <p><strong>Page:</strong> <span id="baptPage"></span></p>
+                                        <p><strong>Line:</strong> <span id="baptLine"></span></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/table.js') }}"></script>
+<script src="{{ url_for('static', filename='js/custom/baptism.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow expanded" data-scroll-to-active="true">
+    <div class="navbar-header expanded">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="/">
+                    <div class="brand-logo"></div>
+                    <div class="brand-name">
+                        <h4 class="brand-text mb-0">St. Joseph<br><h6 class="brand-text">RMS</h6></h4>
+                    </div>
+                </a>
+                
+            </li>
+            <li class="nav-item nav-toggle">
+                <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
+                    <i class="icon-x d-block d-xl-none font-medium-4 primary toggle-icon feather icon-disc"></i>
+                    <i class="toggle-icon icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary feather" data-ticon="icon-disc"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-menu-content">
+
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
+            <li class="nav-item {% if '/dashboard' in request.path %}active{% endif %}">
+                <a href="/" class="list-group-item list-group-item-action">
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="nav-item {% if '/records' in request.path %}active{% endif %}">
+                <a href="/records" class="list-group-item list-group-item-action">
+                    Records
+                </a>
+            </li>
+
+            <li class="nav-item {% if '/baptism' in request.path %}active{% endif %}">
+                <a href="/baptism" class="list-group-item list-group-item-action">
+                    Baptism
+                </a>
+            </li>
+
+            <li class="nav-item {% if '/confirmation' in request.path %}active{% endif %}">
+                <a href="/confirmation" class="list-group-item list-group-item-action">
+                    Confirmation
+                </a>
+            </li>
+
+            <li class="nav-item {% if '/wedding' in request.path %}active{% endif %}">
+                <a href="/wedding" class="list-group-item list-group-item-action">
+                    Wedding
+                </a>
+            </li>
+
+            <li class="nav-item {% if '/death' in request.path %}active{% endif %}">
+                <a href="/death" class="list-group-item list-group-item-action">
+                    Death
+                </a>
+            </li>
+
+            <li class="nav-item {% if '/priest' in request.path %}active{% endif %}">
+                <a href="/priest" class="list-group-item list-group-item-action">
+                    Priest
+                </a>
+            </li>
+
+            <li class="nav-item {% if '/settings' in request.path %}active{% endif %}">
+                <a href="/settings" class="list-group-item list-group-item-action">
+                    Settings
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <form action="/logout" method="post">
+                    <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Logout</button>
+                </form>
+                
+            </li>
+            
+           
+        </ul>
+    </div>
+
+</div>

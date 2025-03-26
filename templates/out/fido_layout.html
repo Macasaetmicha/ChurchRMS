@@ -1,0 +1,19 @@
+{% extends "layout/loggedout_layout.html" %}
+
+{% block logout_content %}
+   
+    <div id="fido-layout-inprogress-div" class="d-none">
+        <div class="d-flex justify-content-center mb-1 text-secondary">
+            <div class="spinner-border" role="status"></div>
+        </div>
+        <div class="text-center text-secondary">Waiting for approval...</div>
+    </div>
+
+    <div id="fido-layout-failed-alert" class="alert alert-danger text-center d-none" role="alert">
+        <img src="/image/danger.svg" class="w-25">
+        <div id="fido-layout-failed-alert-message"></div>
+    </div>
+
+    {% block fido_layout_button %}{% endblock %}
+
+{% endblock %}

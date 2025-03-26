@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block custom_css %}
+<link href="{{ url_for('static', filename='css/custom/login.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block layout %}
+<body>
+    
+    {% block logout_content %}{% endblock %}
+
+</body>     
+{% endblock %}
+
+{% block custom_js %}
+<!-- <script src="{{ url_for('static', filename='js/custom/register.js') }}"></script> -->
+{% endblock %}

@@ -1,0 +1,201 @@
+{% extends "layout/signedin_layout.html" %}
+
+{% block title %}Settings{% endblock %}
+
+{% block signedin_content %}
+
+<div class="page_header row mr-2">
+    <div class="content-header-left col-md-9 col-12 mb-2">
+        <div class="row breadcrumbs-top">
+            <div class="col-12">
+                <h2 class="content-header-title float-left mb-0">Settings</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- left menu section -->
+    <div class="col-md-3 mb-2 mb-md-0">
+        <ul class="nav nav-pills flex-column mt-md-0 mt-1">
+            <li class="nav-item">
+                <a class="nav-link nav-settings-link py-75 active" id="account-pill-general" data-toggle="pill" href="#account-vertical-info" aria-expanded="true">
+                    <img class="settings_btn_img" src="{{ url_for('static', filename='image/user-solid.svg') }}">
+                    <i class="feather icon-globe mr-50 font-medium-3"></i>
+                    User Information
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-settings-link py-75" id="account-pill-password" data-toggle="pill" href="#account-vertical-regDevice" aria-expanded="false">
+                    <img class="settings_btn_img" src="{{ url_for('static', filename='image/mobile-screen-button-solid.svg') }}">
+                    <i class="feather icon-lock mr-50 font-medium-3"></i>
+                    Registered Device
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-settings-link py-75" id="account-pill-info" data-toggle="pill" href="#account-vertical-recovery" aria-expanded="false">
+                    <img class="settings_btn_img" src="{{ url_for('static', filename='image/lock-open-solid.svg') }}">
+                    <i class="feather icon-info mr-50 font-medium-3"></i>
+                    Recovery Option
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-settings-link py-75" id="account-pill-social" data-toggle="pill" href="#account-vertical-about" aria-expanded="false">
+                    <img class="settings_btn_img" src="{{ url_for('static', filename='image/circle-info-solid.svg') }}">
+                    <i class="feather icon-camera mr-50 font-medium-3"></i>
+                    About
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- right content section -->
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="account-vertical-info" aria-labelledby="account-pill-general" aria-expanded="true">
+                            <div class="col-12 row mb-2">
+                                <h5>User Information</h5>
+                                <a class="ml-3" href="#">
+                                    <img class="edit_hyperlink_img" src="{{ url_for('static', filename='image/pen-solid.svg') }}" alt="Edit">
+                                </a>
+                            </div>
+
+                            <div class="accnt-info">
+                                <p class="accnt_label">Name:</p> <p id="accnt-name"></p>
+                            </div>
+                            <div class="accnt-info">
+                                <p class="accnt_label">Username:</p> <p id="accnt-username"></p>
+                            </div>
+                            <div class="accnt-info">
+                                <p class="accnt_label">Email:</p> <p id="accnt-email"></p>
+                            </div>
+                            <div class="accnt-info">
+                                <p class="accnt_label">Contact Number:</p> <p id="accnt-number"></p>
+                            </div>
+                            <div class="accnt-info">
+                                <p class="accnt_label">Date Joined:</p> <p id="accnt-joined"></p>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="tab-pane fade " id="account-vertical-regDevice" role="tabpanel" aria-labelledby="account-pill-password" aria-expanded="false">
+                            <h5>Change Registered Device</h5>
+
+                            <p>Please get your device ready and open a QR Code scanner to authenticate. Take note that the device you will use now will be the device used every time you log into your account.
+                                <br><br>Press the button below if you are ready for authentication.</p>
+                            
+                                <button class="btn btn-primary w-50 mb-1" data-toggle="modal" data-target="#changeRegDeviceModal">Change</button>
+                        </div>
+                        <div class="tab-pane fade" id="account-vertical-recovery" role="tabpanel" aria-labelledby="account-pill-info" aria-expanded="false">
+                            <h5>Recovery Option</h5>
+
+                            <p>If your registered device is lost, you can get a one-time password (OTP) through SMS. The OTP will be sent to a phone number you chose, which is not linked to the lost device. Make sure your recovery number is updated.
+                                <br><br>Current recovery phone number is <span class="recovery-number" id="recovery-number"></span>
+                                <br><br>Change recovery phone number? <a href="#" data-toggle="modal" data-target="#changeRegNumberModal">Change</a></p>
+                        </div>
+                        <div class="tab-pane fade " id="account-vertical-about" role="tabpanel" aria-labelledby="account-pill-social" aria-expanded="false">
+                            <h5>St. Joseph Records Manager</h5>
+
+                            <p>The Records Manager System was created to efficiently manage the office files of the parish and speed up transactions. Some of its key functions include:
+                                <ul>
+                                    <li>Adding, updating, and deleting records for Baptism, Confirmation, Wedding, and Death.</li>
+                                    <li>Creating PDF and Excel files of records and tables.</li>
+                                    <li>Locating physical copies of files.</li>
+                                    <li>Passwordless authentication for secure access.</li>
+                                </ul></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container">
+
+            <div id="changeRegDeviceModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Change Registered Device</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <section class="row flexbox-container">
+                                <div class="bg-authentication mb-0 authenticate-card">
+                                    <div class="row m-0">
+                                        <div class="m-3 px-2">
+                                            <p>Please get your device ready and open a QR Code scanner to authenticate. Take note that the device you will use now will be the device used everytime you log into your account. <br><br>Press the button below if you are ready for authentication.</p>
+                                            
+                                            <div id="fido-layout-inprogress-div" class="d-none">
+                                                <div class="d-flex justify-content-center mb-1 text-secondary">
+                                                    <div class="spinner-border" role="status"></div>
+                                                </div>
+                                                <div class="text-center text-secondary">Waiting for approval...</div>
+                                            </div>
+                                        
+                                            <div id="fido-layout-failed-alert" class="alert alert-danger text-center d-none" role="alert">
+                                                <img src="{{url_for('static', filename='image/danger.svg')}}" class="w-25">
+                                                <div id="fido-layout-failed-alert-message"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </section>
+            
+                        </div>
+                        <div class="modal-footer">
+                            <div class="button-container">
+                                <div id="button-div">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                                    <button id="update-authenticate-button" type="button" class="btn btn-primary">Use Security Key</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="changeRegNumberModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Update Recovery</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <form id="updateRecovNumForm">
+                            <div class="modal-body">
+                                <p>To help secure your account, please provide a recovery phone number. 
+                                    This number will be used to verify your identity and assist you in case you need to recover your account 
+                                    in the future. Kindly enter your phone number below:</p>
+
+                                
+                                    <label>New Recovery Phone Number:</label>
+                                    <input type="text" class="form-control" name="new-recov-num" required="1">
+                            </div>
+                            <div class="modal-footer">
+                                <div class="button-container">
+                                    <div id="button-div">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button class="insert-btn-priest btn btn-primary" data-page="updateRecovNum">Update Number</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/table.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/custom/settings.js') }}"></script>
+
+
+{% endblock %}

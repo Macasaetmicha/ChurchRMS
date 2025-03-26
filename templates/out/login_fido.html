@@ -1,0 +1,63 @@
+{% extends "layout/loggedout_layout.html" %}
+
+{% block title %}LOGIN | Authenticate{% endblock %}
+
+{% block logout_content %} 
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <section class="row flexbox-container">
+                    <div class="card bg-authentication mb-0 authenticate-card">
+                        <div class="row m-0">
+                            
+                            <div class="col-lg-5 d-lg-block d-none text-center align-self-center px-1 py-0 login-img">
+                                <img src="{{url_for('static', filename='image/stjoseph.png')}}" alt="branding logo" class="branding-logo">
+                            </div>  
+                            
+                            <div class="col-lg-7 col-12 p-3">
+                                <div class="card mb-0 px-2">
+                                    <div class="card-header pb-1">
+                                        <div class="card-title">
+                                            <h4 class="mb-0">Authentication</h4>
+                                        </div>
+                                    </div>
+                                    <p>Please get your device ready and open a QR Code scanner to authenticate. Take note that the device you will use now will be the device used everytime you log into your account. <br><br>Press the button below if you are ready for authentication.</p>
+                                    
+                                    <div id="fido-layout-inprogress-div" class="d-none">
+                                        <div class="d-flex justify-content-center mb-1 text-secondary">
+                                            <div class="spinner-border" role="status"></div>
+                                        </div>
+                                        <div class="text-center text-secondary">Waiting for approval...</div>
+                                    </div>
+                                
+                                    <div id="fido-layout-failed-alert" class="alert alert-danger text-center d-none" role="alert">
+                                        <img src="{{url_for('static', filename='image/danger.svg')}}" class="w-25">
+                                        <div id="fido-layout-failed-alert-message"></div>
+                                    </div>
+                                    
+                                    <div class="button-container">
+                                        <div id="button-div">
+                                            <a class="btn btn-secondary" href="/login">Back</a>
+
+                                            <button id="authenticate-button" type="button" class="btn btn-primary">Use Security Key</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    <script type="module" src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+{% endblock %}
