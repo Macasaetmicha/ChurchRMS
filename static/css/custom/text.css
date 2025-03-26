@@ -1,0 +1,22 @@
+a{
+    color: #626262;
+}
+
+.nav-link.active {
+    font-weight: bolder !important;
+}
+
+.accnt_label, 
+.recovery-number{
+    font-weight: 500;
+}
+
+.accnt_label, #accnt-name, #accnt-username, #accnt-email, #accnt-number, #accnt-joined {
+    display: inline-block;
+    margin-right: 0.3rem;
+}
+
+.btn-primary,
+.add-priest-btn{
+    color: white!important;
+}

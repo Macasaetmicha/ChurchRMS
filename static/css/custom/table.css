@@ -1,0 +1,124 @@
+.add_btn_img {
+    width: 1rem;
+    height: 1rem;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(100%);
+}
+
+.delete-btn-bapt,
+.delete-btn-conf,
+.delete-btn-wedd,
+.delete-btn-death,
+.delete-btn-priest{
+    background-color: #ED0800;
+}
+.delete-btn-bapt:hover,
+.delete-btn-conf:hover,
+.delete-btn-wedd:hover,
+.delete-btn-death:hover,
+.delete-btn-priest:hover{
+    background-color: rgb(138, 35, 35) !important;
+}
+.delete-btn-bapt:focus, .delete-btn-bapt:active,
+.delete-btn-conf:focus, .delete-btn-conf:active,
+.delete-btn-wedd:focus, .delete-btn-wedd:active,
+.delete-btn-death:focus, .delete-btn-death:active,
+.delete-btn-priest:focus, .delete-btn-priest:active{      
+    background-color: #ED0800 !important; 
+    box-shadow: 0 0 0 0.2rem rgba(148, 10, 0, 0.5); 
+}
+
+.edit-btn-bapt-trigger,
+.edit-btn-conf-trigger,
+.edit-btn-wedd-trigger,
+.edit-btn-death-trigger,
+.edit-btn-priest-trigger{
+    background-color: #ffbd03;
+}
+.edit-btn-bapt-trigger:hover,
+.edit-btn-conf-trigger:hover,
+.edit-btn-wedd-trigger:hover,
+.edit-btn-death-trigger:hover,
+.edit-btn-priest-trigger:hover{
+    background-color: rgb(255, 217, 0);
+}
+.edit-btn-bapt-trigger:focus, .edit-btn-bapt-trigger:active,
+.edit-btn-conf-trigger:focus, .edit-btn-conf-trigger:active,
+.edit-btn-wedd-trigger:focus, .edit-btn-wedd-trigger:active,
+.edit-btn-death-trigger:focus, .edit-btn-death-trigger:active,
+.edit-btn-priest-trigger:focus, .edit-btn-priest-trigger:active{ 
+    background-color: #ffbd03 !important; 
+    box-shadow: 0 0 0 0.2rem rgba(255, 251, 34, 0.5); 
+}
+
+.find-btn,
+.show-btn-bapt-trigger, 
+.show-btn-conf-trigger,
+.show-btn-wedd-trigger,
+.show-btn-death-trigger,
+.show-btn-priest-trigger{
+    background-color: #4681f4;
+}
+
+.find-btn:hover, 
+.show-btn-bapt-trigger:hover, 
+.show-btn-conf-trigger:hover,
+.show-btn-wedd-trigger:hover,
+.show-btn-death-trigger:hover,
+.show-btn-priest-trigger:hover{
+    background-color: rgb(39, 77, 126) !important;
+}
+
+.find-btn:focus, .find-btn:active, 
+.show-btn-bapt-trigger:focus, .show-btn-bapt-trigger:active,
+.show-btn-conf-trigger:focus, .show-btn-conf-trigger:active,
+.show-btn-wedd-trigger:focus, .show-btn-wedd-trigger:active,
+.show-btn-death-trigger:focus, .show-btn-death-trigger:active,
+.show-btn-priest-trigger:focus, .show-btn-priest-trigger:active{
+    background-color: #4681f4 !important; 
+    box-shadow: 0 0 0 0.2rem rgba(48, 127, 231, 0.5); 
+}
+
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+#baptismTable, #recordsTable{
+    width: 100%;
+}
+
+.dataTables_wrapper .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.1rem;
+}
+
+.dataTables_length {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.dataTables_filter {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.dataTables_paginate {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+table th, table td {
+    text-align: center;
+    vertical-align: middle!important;
+}
+
+.dataTables_paginate .pagination{
+    margin: 0;
+    padding-top: .755em;
+    padding-bottom: .755em;
+}

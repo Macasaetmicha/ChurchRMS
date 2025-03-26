@@ -1,0 +1,345 @@
+<table id="baptismTable" class="display table zero-configuration dataTable table-striped table-bordered rounded mt-2 w-100">
+                        <thead>
+                            <tr>
+                                <th rowspan="3">Action</th> 
+                                <th rowspan="2">Date</th>
+                                <th colspan="3">Name</th>
+                                <th colspan="2">Birth</th>
+                                <th rowspan="2">Address</th>
+                                <th colspan="4">Sponsor</th>
+                                <th rowspan="2">Priest</th>
+                            </tr>
+                            <tr>
+                                <th>First</th>
+                                <th>Middle</th>
+                                <th>Last</th>
+                                <th>Birthdate</th>
+                                <th>Birth Place</th>
+                                <th>Sponsor</th> 
+                                <th>Residence</th> 
+                                <th>Sponsor</th> 
+                                <th>Residence</th> 
+                            </tr>
+                        </thead>
+                        
+                        
+                        
+                        <tbody>
+                            {% if exisitng_baptism %}
+                                {% for row in exisitng_baptism %}
+                                    <tr>
+                                        <td>
+                                            <a href="/show/{{ row['id'] }}" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#baptShowModal{{ row['id'] }}">Info</a>
+                                            <a href="/update/{{ row['id'] }}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#baptEditModal{{ row['id'] }}">Edit</a>
+                                            <button class="delete-btn-bapt btn btn-primary" data-id="{{ row['id'] }}">Delete</button>
+                                            <!-- <a href="/delete/{{ row['id'] }}" class="btn btn-warning btn-xs">Delete</a> -->
+                                        </td>
+                                        <td>{{ row['baptism_date'] }}</td>
+                                        <td>{{ row['fname'] }}</td>
+                                        <td>{{ row['mname'] }}</td>
+                                        <td>{{ row['lname'] }}</td>
+                                        <td>{{ row['birthday'] }}</td>
+                                        <td>{{ row['birthplace'] }}</td>
+                                        <td>{{ row['address'] }}</td>
+                                        <td>{{ row['sponsorA'] }}</td>
+                                        <td>{{ row['residenceA'] }}</td>
+                                        <td>{{ row['sponsorB'] }}</td>
+                                        <td>{{ row['residenceB'] }}</td>
+                                        <td>{{ row['priest_name'] }}</td>
+                                    </tr>
+                                    
+                                    <div id="baptShowModal{{ row['id'] }}" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Baptism Information</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="divider divider-dark divider-left">
+                                                        <div class="divider-text"><h5>Clients' Information</h5></div>
+                                                    </div>
+                                                    <p><strong>Client Name:</strong> {{ row['fname'] }} {{ row['mname'] }} {{ row['lname'] }}</p>
+                                                    <p><strong>Birthday:</strong> {{ row['birthday'] }}</p>
+                                                    <p><strong>Birthplace:</strong> {{ row['birthplace'] }}</p>
+                                                    <p><strong>Ligitivity:</strong> {{ row['ligitivity'] }}</p>
+                                                    <p><strong>Address:</strong> {{ row['address'] }}</p>
+                                                    
+                                                    <div class="divider divider-dark divider-left">
+                                                        <div class="divider-text"><h5>Parents' Information</h5></div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <p><strong>Mother:</strong> {{ row['mother_fname'] }} {{ row['mother_mname'] }} {{ row['mother_lname'] }}</p>
+                                                            <p><strong>Birthday:</strong> {{ row['mother_birthday'] }}</p>
+                                                            <p><strong>Birthplace:</strong> {{ row['mother_bplace'] }}</p>
+                                                            <p></p><strong>Address:</strong> {{ row['mother_address'] }}</p>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <p><strong>Father:</strong> {{ row['father_fname'] }} {{ row['father_mname'] }} {{ row['father_lname'] }}</p>
+                                                            <p><strong>Birthday:</strong> {{ row['father_birthday'] }}</p>
+                                                            <p><strong>Birthplace:</strong> {{ row['father_bplace'] }}</p>
+                                                            <p><strong>Address:</strong> {{ row['father_address'] }}</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="divider divider-dark divider-left">
+                                                        <div class="divider-text"><h5>Baptism Information</h5></div>
+                                                    </div>
+                                                    <p><strong>Baptism Date:</strong> {{ row['baptism_date'] }}</p>
+                                                    <p><strong>Priest:</strong> {{ row['priest_name'] }}</p>
+                                                    <p><strong>Sponsor A:</strong> {{ row['sponsorA'] }} (Residence: {{ row['residenceA'] }})</p>
+                                                    <p><strong>Sponsor B:</strong> {{ row['sponsorB'] }} (Residence: {{ row['residenceB'] }})</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="baptEditModal{{ row['id'] }}" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Update Information</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form id="updateBaptForm">
+                            
+                                                        <!-- Client Information -->
+                                                        <div class="form-section">
+                                                            <h5>Client Information</h5>
+                                                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    <label>First Name:</label>
+                                                                    <input type="hidden" name="id" value="{{row['id']}}">
+                                                                    <input type="hidden" name="client_id" value="{{row['client_id']}}">
+                                                                    <input type="text" class="form-control" name="fname" required="1" value="{{row['fname']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Middle Name:</label>
+                                                                    <input type="text" class="form-control" name="mname" required="1" value="{{row['mname']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Last Name:</label>
+                                                                    <input type="text" class="form-control" name="lname" required="1" value="{{row['lname']}}">
+                                                                </div>
+                                                                
+                                                            </div>
+                                    
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    <label>Birth Date:</label>
+                                                                    <input type="date" class="form-control" name="birthday" required="1" value="{{row['birthday']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Birth Place:</label>
+                                                                    <input type="text" class="form-control" name="birthplace" required="1" value="{{row['birthplace']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Ligitivity:</label><br>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="ligitivity" value="civil" required {% if row['ligitivity'] == 'civil' %}checked{% endif %}>
+                                                                        <label class="form-check-label">Civil</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="ligitivity" value="catholic" required {% if row['ligitivity'] == 'catholic' %}checked{% endif %}>
+                                                                        <label class="form-check-label">Catholic</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                    
+                                                            <div class="form-group">
+                                                                <label>Address:</label>
+                                                                <input type="text" class="form-control" name="address" required="1" value="{{row['address']}}">
+                                                            </div>
+                                    
+                                                            <!-- Parents Information -->
+                                                            <h6>Mother's Information</h6>
+                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    <label>First Name:</label>
+                                                                    <input type="text" class="form-control" name="mother-fname" required="1" value="{{row['mother_fname']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Middle Name:</label>
+                                                                    <input type="text" class="form-control" name="mother-mname" required="1" value="{{row['mother_mname']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Last Name:</label>
+                                                                    <input type="text" class="form-control" name="mother-lname" required="1" value="{{row['mother_lname']}}"> 
+                                                                </div>
+                                                            </div>
+                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-6">
+                                                                    <label>Birthday:</label>
+                                                                    <input type="date" class="form-control" name="mother-birthday" required="1" value="{{row['mother_birthday']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <label>Birth Place:</label>
+                                                                    <input type="text" class="form-control" name="mother-bplace" required="1" value="{{row['mother_bplace']}}">
+                                                                </div>
+                                                            </div>
+                                    
+                                                            <div class="form-group">
+                                                                <label>Address:</label>
+                                                                <input type="text" class="form-control" name="mother-address" required="1" value="{{row['mother_address']}}">
+                                                            </div>
+                                    
+                                                            <!-- Father Information -->
+                                                            <h6>Father's Information</h6>
+                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    <label>First Name:</label>
+                                                                    <input type="text" class="form-control" name="father-fname" required="1" value="{{row['father_fname']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Middle Name:</label>
+                                                                    <input type="text" class="form-control" name="father-mname" required="1" value="{{row['father_mname']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Last Name:</label>
+                                                                    <input type="text" class="form-control" name="father-lname" required="1" value="{{row['father_lname']}}">
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-6">
+                                                                    <label>Birthday:</label>
+                                                                    <input type="date" class="form-control" name="father-birthday" required="1" value="{{row['father_birthday']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <label>Birth Place:</label>
+                                                                    <input type="text" class="form-control" name="father-bplace" required="1" value="{{row['father_bplace']}}">
+                                                                </div>
+                                                            </div>
+                                    
+                                                            <div class="form-group">
+                                                                <label>Address:</label>
+                                                                <input type="text" class="form-control" name="father-address" required="1" value="{{row['father_address']}}">
+                                                            </div>
+                                    
+                                                            <!-- Guardian Information (Optional) -->
+                                                            <h6>Guardian Information (Optional)</h6>
+                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-4">
+                                                                    <label>First Name:</label>
+                                                                    <input type="text" class="form-control" name="guardian-fname" required="1" value="{{row['guardian_fname']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Middle Name:</label>
+                                                                    <input type="text" class="form-control" name="guardian-mname" required="1" value="{{row['guardian_mname']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-4">
+                                                                    <label>Last Name:</label>
+                                                                    <input type="text" class="form-control" name="guardian-lname" required="1" value="{{row['guardian_lname']}}">
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-6">
+                                                                    <label>Birthday:</label>
+                                                                    <input type="date" class="form-control" name="guardian-birthday" required="1" value="{{row['guardian_birthday']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <label>Birth Place:</label>
+                                                                    <input type="text" class="form-control" name="guardian-bplace" required="1" value="{{row['guardian_bplace']}}">
+                                                                </div>
+                                                            </div>
+                                    
+                                                            <div class="form-group">
+                                                                <label>Address:</label>
+                                                                <input type="text" class="form-control" name="guardian-address" required="1" value="{{row['guardian_address']}}">
+                                                            </div>
+                                                        </div>
+                                    
+                                                        <!-- Baptism Information -->
+                                                        <div class="form-section">
+                                                            <h5>Baptism Information</h5>
+                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-6">
+                                                                    <label>Date of Baptism:</label>
+                                                                    <input type="date" class="form-control" name="baptism-date" required="1" value="{{row['baptism_date']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <label>Priest:</label>
+                                                                    <select class="form-control" name="priest" required>
+                                                                        <option value="" disabled selected>Select a Priest</option>
+                                                                        {% for priest in priests %}
+                                                                        <option value="{{ priest.id }}" {% if priest.id == row['priest_id'] %}selected{% endif %}>{{ priest.name }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-6">
+                                                                    <label>Sponsor 1 Name:</label>
+                                                                    <input type="text" class="form-control" name="sponsor1" required="1" value="{{row['sponsorA']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <label>Residence of Sponsor 1:</label>
+                                                                    <input type="text" class="form-control" name="sponsor1-residence" required="1" value="{{row['residenceA']}}">
+                                                                </div>
+                                                            </div>
+                            
+                                                            <div class="form-group row">
+                                                                <div class="col-md-6">
+                                                                    <label>Sponsor 2 Name:</label>
+                                                                    <input type="text" class="form-control" name="sponsor2" required="1" value="{{row['sponsorB']}}">
+                                                                </div>
+                            
+                                                                <div class="col-md-6">
+                                                                    <label>Residence of Sponsor 2:</label>
+                                                                    <input type="text" class="form-control" name="sponsor2-residence" required="1" value="{{row['residenceB']}}">
+                                                                </div>
+                                                            </div>
+                                
+                                                        </div>
+                                    
+                                                        <!-- Submit Button -->
+                                                        <div class="form-group">
+                                                            <button class="edit-btn-bapt btn btn-primary" data-id="{{ row['id'] }}">Edit</button>
+                                                            <!-- <button class="btn btn-primary" type="submit">Update Data</button> -->
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-defualt" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                    <td colspan="16" class="text-center">No records available</td>
+                                </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
